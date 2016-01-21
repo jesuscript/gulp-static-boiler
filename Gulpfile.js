@@ -7,23 +7,23 @@ gulp.task("clean",function(cb){
     .pipe(plugins.rimraf());
 });
 
+gulp.task("build-js", ["clean"], function(){
+  return gulp.src("./js/*.js")
+    .pipe(gulp.dest("./dist/js/"));
+});
 
 gulp.task("build-css", ["clean"], function(){
   return gulp.src("./css/*.css")
     .pipe(gulp.dest("./dist/css/"));
 });
 
-gulp.task("build-html",["build-css"], function(){
+gulp.task("build-views",["build-css", "build-js"], function(){
   return gulp.src(['./views/*.jade', "!/views/layouts/*"])
     .pipe(plugins.jade())
     .pipe(gulp.dest('./dist/'));
 });
 
 
-gulp.task("production", function(){
-  
-});
+gulp.task("production");//TODO
 
-gulp.task("default", ["clean","build-css","build-html"] ,function(){
-  
-});
+gulp.task("default", ["build-views"]);
