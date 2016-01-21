@@ -1,13 +1,11 @@
 {
-  "name": "application-name",
+  "name": "Gulp-static-boiler",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "^4.13.3",
     "gulp": "3.9.0",
     "gulp-jade": "^1.1.0",
     "gulp-load-plugins": "^1.2.0",
-    "gulp-rimraf": "^0.2.0",
-    "jade": "*"
+    "gulp-rimraf": "^0.2.0"
   }
 }
